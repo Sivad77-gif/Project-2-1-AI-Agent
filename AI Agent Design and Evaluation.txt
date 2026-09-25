@@ -1,0 +1,321 @@
+=====================================================================
+ PROJECT EXERCISE 2-1: DESIGNING AND EVALUATING AN AI AGENT
+ A Guide for Fair, Transparent, Inclusive, and Socially Aware AI
+=====================================================================
+
+---------------------------------------------------------------------
+TASK 1: SCENARIO SELECTION
+---------------------------------------------------------------------
+Selected scenario: PERSONAL WELLNESS AI
+
+Agent name: "WellPath"
+An AI agent that helps people track and improve their physical and
+mental health through daily check-ins, habit tracking, and
+personalized, explainable wellness suggestions.
+
+
+---------------------------------------------------------------------
+TASK 2: DEFINE THE AI AGENT
+---------------------------------------------------------------------
+1. What data would this AI need to collect?
+   - Daily mood check-ins (1-5 scale plus optional journal notes)
+   - Sleep duration and quality (self-reported or from a wearable)
+   - Physical activity (steps, workouts, active minutes)
+   - Water intake and general eating habits (optional)
+   - User-defined wellness goals (e.g., "sleep 7 hours," "walk daily")
+   - Basic profile info the user chooses to share (age range,
+     accessibility needs, preferred language)
+   - Consent settings: what the user allows to be stored or shared
+   All sensitive data is opt-in, encrypted, and deletable by the user.
+
+2. How would it interact with users?
+   - Through a mobile/web app with a conversational chat interface
+   - Short daily check-in prompts (text or voice input)
+   - Gentle, optional reminders (user sets frequency and quiet hours)
+   - A dashboard showing trends in mood, sleep, and activity
+   - Every suggestion includes a "Why am I seeing this?" explanation
+   - Accessible design: screen-reader support, adjustable text size,
+     multiple languages, and plain-language wording
+
+3. What decisions would it make?
+   - Which wellness suggestion to show (e.g., stretch, hydrate, rest,
+     short breathing exercise) based on the check-in and goals
+   - When to send a reminder, within the user's chosen schedule
+   - Whether a check-in shows possible crisis warning signs; if so,
+     it immediately surfaces crisis resources (e.g., 988 Suicide &
+     Crisis Lifeline) and offers a connection to a human
+   - How to adjust future suggestions based on user feedback
+   It does NOT diagnose conditions or replace a medical professional.
+
+4. What is its main goal?
+   To help people build sustainable, healthy habits and better
+   understand their own physical and mental well-being, while
+   respecting their privacy, autonomy, and individual circumstances.
+
+5. How could it be misused, even if unintentionally?
+   - Health data could be sold to or shared with advertisers,
+     insurers, or employers, leading to discrimination
+   - Users might treat suggestions as medical advice and delay
+     seeing a real doctor or therapist
+   - Streaks, badges, and notifications could create compulsive use
+     or guilt instead of healthy habits
+   - Calorie/weight goals could reinforce disordered eating
+   - Recommendations trained mostly on one population (e.g., young,
+     able-bodied, affluent users) might not fit others
+   - Employers could pressure staff to use it as a monitoring tool
+
+
+---------------------------------------------------------------------
+TASK 3: FLOWCHART (created in draw.io)
+---------------------------------------------------------------------
+The draw.io file is saved as "WellPath_Flowchart.drawio". Open it at
+https://app.diagrams.net (File > Open from > Device), then export it
+as a PNG (File > Export as > PNG) and paste/attach the image here.
+
+Legend:  ( )  = Start/End (oval)
+         [ ]  = Process (rectangle)
+         < >  = Decision point (diamond, Yes/No)
+         {{ }} = Action (rounded rectangle)
+
+             ( START: User opens WellPath )
+                          |
+                          v
+     [ User completes daily check-in: mood, sleep, activity ]
+                          |
+                          v
+          < Has user consented to data collection? >
+               |  Yes                      | No
+               |                           v
+               |     {{ Show plain-language privacy notice;  }}
+               |     {{ offer guest mode (nothing is saved)  }} --> ( END )
+               v
+   [ AI analyzes check-in against user's goals and history ]
+                          |
+                          v
+          < Does check-in show signs of crisis/self-harm? >
+               |  No                       | Yes
+               |                           v
+               |     {{ Display 988 crisis line; offer to   }}
+               |     {{ connect to a human counselor        }} --> ( END )
+               v
+          < Does user have an active wellness goal? >
+               |  Yes                      | No
+               |                           v
+               |     {{ Guide user to set a realistic goal  }}
+               |                           |
+               v<--------------------------+
+     [ AI generates a personalized wellness recommendation ]
+                          |
+                          v
+     {{ Display suggestion with "Why am I seeing this?" }}
+                          |
+                          v
+          < Did the user find the suggestion helpful? >
+               |  Yes                      | No
+               v                           v
+  {{ Log progress and      }}   {{ Collect feedback and adjust }}
+  {{ celebrate the streak  }}   {{ future suggestions          }}
+               |                           |
+               +-------------+-------------+
+                             v
+                  ( END of interaction )
+
+
+---------------------------------------------------------------------
+TASK 4: AI AGENT DESIGN AND ETHICS EVALUATION (Table 2-12)
+---------------------------------------------------------------------
+FEATURES             | AGENT TASK                    | YOUR RESPONSE
+---------------------|-------------------------------|----------------
+Scenario selection   | Choose one AI agent scenario  | Personal Wellness AI ("WellPath")
+---------------------|-------------------------------|----------------
+Agent Task #1        | Helpful/ethical feature       | Generates personalized daily
+                     |                               | wellness suggestions (a short
+                     |                               | walk, hydration, a breathing
+                     |                               | exercise) based on the user's
+                     |                               | check-in and goals, with a clear
+                     |                               | "Why am I seeing this?" note.
+                     |-------------------------------|----------------
+                     | Potentially unethical feature | Shares or sells users' mood,
+                     |                               | sleep, and health data with
+                     |                               | advertisers, insurance companies,
+                     |                               | or employers to "personalize
+                     |                               | offers" - a privacy violation
+                     |                               | that could lead to higher premiums
+                     |                               | or job discrimination.
+---------------------|-------------------------------|----------------
+Agent Task #2        | Helpful/ethical feature       | Detects crisis warning signs in
+                     |                               | check-ins and immediately shows
+                     |                               | crisis resources (988 Lifeline)
+                     |                               | and offers to connect the user to
+                     |                               | a human professional.
+                     |-------------------------------|----------------
+                     | Potentially unethical feature | Uses manipulative engagement
+                     |                               | tactics - guilt-inducing streak
+                     |                               | alerts ("You're letting yourself
+                     |                               | down!"), constant notifications,
+                     |                               | and pushing paid supplements -
+                     |                               | promoting unhealthy, compulsive
+                     |                               | habits to boost profit.
+---------------------|-------------------------------|----------------
+Agent Task #3        | Helpful/ethical feature       | Suggests a break or rest day when
+                     |                               | sleep is low or stress is high,
+                     |                               | instead of pushing harder goals.
+---------------------|-------------------------------|----------------
+Agent Task #4        | Helpful/ethical feature       | Provides a visual dashboard of
+                     |                               | mood, sleep, and activity trends
+                     |                               | so users can understand their own
+                     |                               | patterns and share them with a
+                     |                               | doctor if they choose.
+---------------------|-------------------------------|----------------
+Agent Task #5        | Helpful/ethical feature       | Adapts to each user's abilities,
+                     |                               | culture, language, and budget
+                     |                               | (e.g., seated exercises for
+                     |                               | wheelchair users, free activities,
+                     |                               | culturally relevant food ideas).
+---------------------|-------------------------------|----------------
+Data use             | What data does this AI need   | Mood check-ins, sleep, activity,
+                     | to collect?                   | hydration, user-set goals,
+                     |                               | optional profile info, and consent
+                     |                               | settings. All opt-in, encrypted,
+                     |                               | minimal, and user-deletable.
+---------------------|-------------------------------|----------------
+User interaction     | How does the AI interact with | Conversational chat and short daily
+                     | users?                        | check-ins (text or voice), optional
+                     |                               | reminders on the user's schedule,
+                     |                               | a trends dashboard, and accessible,
+                     |                               | multilingual, plain-language UI.
+---------------------|-------------------------------|----------------
+Decision-making      | What decisions does it make   | Chooses which suggestion to show,
+                     | and how?                      | when to remind, and whether to
+                     |                               | surface crisis resources. It uses
+                     |                               | rule-based safety checks plus a
+                     |                               | recommendation model that weighs
+                     |                               | the check-in, goals, and past
+                     |                               | feedback. It never diagnoses; the
+                     |                               | user always makes the final choice.
+---------------------|-------------------------------|----------------
+Main goal            | What is the AI designed to    | Help people build sustainable
+                     | accomplish?                   | healthy habits and understand
+                     |                               | their well-being while protecting
+                     |                               | their privacy and autonomy.
+---------------------|-------------------------------|----------------
+Misuse risk          | How could the AI be misused   | Data sold to insurers/employers;
+                     | or misunderstood?             | users mistaking tips for medical
+                     |                               | advice; compulsive use from
+                     |                               | gamification; weight goals that
+                     |                               | fuel disordered eating; biased
+                     |                               | advice for underrepresented groups;
+                     |                               | employers using it to monitor staff.
+---------------------------------------------------------------------
+
+Positive and ethical tasks (summary):
+  WellPath generates personalized, explainable wellness suggestions;
+  detects crisis signs and connects users to human help; recommends
+  rest when needed; shows users their own trends; and adapts to
+  different abilities, cultures, languages, and budgets.
+
+Potentially unethical tasks (summary):
+  1. Selling or sharing health data with advertisers, insurers, or
+     employers (privacy violation, discrimination risk).
+  2. Manipulative engagement: guilt-based streaks, excessive
+     notifications, and upselling products (manipulation, unhealthy
+     habits, profit over user well-being).
+  3. (Additional) Using a "black box" model to label users as
+     "high risk" or "unmotivated" without explanation, trained on
+     data mostly from young, affluent, able-bodied users (bias and
+     lack of transparency).
+
+
+---------------------------------------------------------------------
+TASK 5: ETHICAL AI PRINCIPLES EVALUATION (Table 2-13)
+---------------------------------------------------------------------
+
+PRINCIPLE 1: EQUITY OVER EFFICIENCY
+Questions: Does it prioritize fairness over profit? Is it regularly
+audited for bias? Does it risk benefiting some while harming others?
+
+Does WellPath uphold this principle? PARTIALLY - YES with safeguards.
+  - The ethical design prioritizes user well-being over engagement
+    and profit: no selling of data, no manipulative streaks, and core
+    features (check-ins, crisis support, suggestions) are free.
+  - The recommendation model is audited quarterly for bias by
+    comparing suggestion quality and user outcomes across age,
+    gender, race/ethnicity, disability, income, and language groups.
+  - Risk: if the two unethical features (data selling, manipulative
+    engagement) were enabled, profit would clearly win over fairness,
+    and lower-income users could be harmed by insurance or employer
+    discrimination. These features must be removed, not just limited.
+
+PRINCIPLE 2: TRANSPARENCY AND EXPLAINABILITY
+Questions: Can users understand how it makes decisions? Are its
+actions traceable? Are data practices disclosed clearly?
+
+Does WellPath uphold this principle? YES.
+  - Every suggestion includes a "Why am I seeing this?" explanation
+    (e.g., "You reported 5 hours of sleep and high stress, so we
+    suggested a short rest break").
+  - Each recommendation and safety alert is logged so the user (and
+    auditors) can trace what data led to which action.
+  - A short, plain-language privacy notice explains what is
+    collected, why, and who can see it - shown before any data is
+    stored, with easy "download my data" and "delete my data" options.
+  - Risk: the "black box" risk-labeling feature would violate this
+    principle; any user classification must be visible and
+    explainable to the user.
+
+PRINCIPLE 3: INCLUSIVE DESIGN PRACTICES
+Questions: Whose perspectives were considered? Could it
+unintentionally exclude or harm? Is it usable across diverse
+populations?
+
+Does WellPath uphold this principle? MOSTLY - YES, with ongoing work.
+  - Design includes input from doctors, mental health professionals,
+    disability advocates, older adults, low-income users, and
+    people from different cultural and language backgrounds.
+  - Supports screen readers, voice input, large text, multiple
+    languages, and seated/low-mobility exercise options.
+  - Avoids weight-loss and calorie pressure by default to reduce harm
+    to people with a history of eating disorders.
+  - Risk: users without smartphones, wearables, or reliable internet
+    may be excluded. Mitigation: a low-data web version and
+    SMS-based check-ins. A "neutral" standard like "10,000 steps a
+    day" may not fit everyone, so goals are user-defined.
+
+PRINCIPLE 4: HISTORICAL AND SOCIAL AWARENESS
+Questions: Is training data free from legacy bias? Could it impact
+society or behavior long term? Are embedded assumptions questioned?
+
+Does WellPath uphold this principle? PARTIALLY - requires vigilance.
+  - Historical health data has well-known biases (e.g., BMI standards
+    and medical research that underrepresented women and people of
+    color). WellPath does not use BMI as a success measure and
+    reviews training data for representation gaps.
+  - Embedded assumptions (that "healthy" looks the same for everyone,
+    that more activity is always better) are questioned by an
+    advisory board that reviews content annually.
+  - Long-term impact: positive if it builds self-awareness and
+    healthy habits; negative if it creates dependence on an app,
+    normalizes constant self-tracking, or lets employers and insurers
+    use wellness data against people. WellPath encourages real-world
+    human support and never shares data without explicit consent.
+  - Training data can never be completely free of legacy bias, so
+    continuous monitoring, user feedback, and correction are required.
+
+
+---------------------------------------------------------------------
+CONCLUSION: GUIDE FOR FAIR, TRANSPARENT, INCLUSIVE, AND SOCIALLY
+AWARE AI
+---------------------------------------------------------------------
+1. Fairness:      Put user well-being ahead of profit; audit for bias
+                  regularly across demographic groups.
+2. Transparency:  Explain every decision in plain language; keep
+                  traceable logs; disclose data practices up front.
+3. Inclusion:     Design with diverse users and experts; support
+                  accessibility, languages, and low-resource access.
+4. Awareness:     Question legacy data and "neutral" standards;
+                  consider long-term effects on individuals and society.
+5. Privacy:       Collect minimal data, require opt-in consent, never
+                  sell health data, and let users delete everything.
+6. Human safety:  Never replace professionals; escalate crises to
+                  human help immediately.
+=====================================================================
