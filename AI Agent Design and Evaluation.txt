@@ -319,3 +319,23 @@ AWARE AI
 6. Human safety:  Never replace professionals; escalate crises to
                   human help immediately.
 =====================================================================
+
+---------------------------------------------------------------------
+ DISCUSSION QUESTIONS
+---------------------------------------------------------------------
+1. After designing and evaluating your AI agent, what is the most significant ethical challenge you identified?
+
+For me, the biggest challenge was privacy. WellPath only works well if people share really personal things like their mood, sleep, and stress levels. That same information could hurt someone if it got into the wrong hands. If a company sold it to an insurer or an employer, a person could end up paying more or even being treated differently at work just because they had a rough month. It surprised me how easily a helpful feature could turn into something harmful.
+
+2. How might you mitigate this challenge in a real-world application?
+
+I would make everything opt-in, so users choose what they share, and I'd only collect what the app actually needs. The data would be encrypted, and users could download or delete all of it whenever they want. I'd also have a clear rule that health data is never sold or shared without the person's permission. Finally, I'd write the privacy policy in plain language so people actually understand it instead of just clicking "agree."
+
+3. What was the most challenging part of creating the design for this agent?
+
+Honestly, the hardest part was balancing helpfulness with not being pushy. Features like streaks and reminders can motivate people, but they can also make someone feel guilty or stressed, which defeats the whole point of a wellness app. Figuring out what to do when someone shows signs of a crisis was also tough. I had to accept that the AI shouldn't try to handle that on its own and should connect the person to a real human instead.
+
+4. What new insights did you gain about AI ethics and design?
+
+I learned that ethics has to be part of the design from the start, not something you fix later. Before this project, I thought bias mostly came from bad intentions. Now I see it can come from something as simple as training data that doesn't include everyone, or a "normal" standard that doesn't fit every person. I also realized how important it is for users to understand why the AI suggests something. If people can't see how it makes decisions, it's hard for them to trust it.
+
